@@ -1,0 +1,20 @@
+{% extends "personal/header.html" %}
+
+<p>You searched for: <strong>this</strong></p>
+
+{% if images %}
+    <p>Found {{ images|length }} image {{ images |pluralize }}.</p>
+    <ul>
+        {% for image in images %}
+        {%if type == 'image'%}
+        	<li><img src="{{ image.image_url }}" alt="some_text"></li>
+        {% else %}
+        	<li><video width="320" height="240" controls>
+        		<source src="{{ image.image_url }}" alt="some_text"></video>
+        	</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No images matched your search criteria.</p>
+{% endif %}

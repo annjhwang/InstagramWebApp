@@ -1,0 +1,15 @@
+{% extends "personal/header.html" %}
+{% block content %}
+<h3>{{ image.User }}</a></h3>
+{%if image.image_datatype == 'image'%}
+    <li><img src="{{ image.image_url }}" alt="some_text"></li>
+{% else %}
+    <li><video width="320" height="240" controls>
+    <source src="{{ image.image_url }}" alt="some_text"></video>
+    </li>
+{% endif %}
+
+<a href="{{ image.image_link}}">Native instagram link</a>
+
+{% endblock %}
+

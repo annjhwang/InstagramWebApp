@@ -1,0 +1,12 @@
+{% extends "personal/header.html" %}
+
+<h2>Posts:</h2>
+
+{% includes page_template %}
+
+{% block js %}
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+    <script>$.endlessPaginate();</script>
+{% endblock %}

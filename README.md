@@ -4,7 +4,7 @@ This project takes a tag and a timeframe and outputs the Instagram posts made wi
 
 ---------------
 
-## Initial Setup ###
+## Initial Setup ##
 
 ###1. Download
 First Install Django using this command in the terminal: `pip install Django`
@@ -23,7 +23,7 @@ Finally, open the website in browser at:
 `http://localhost:8000/`.
 
 
-### Searching Tags ###
+## Searching Tags ##
 1. After oping the browser to ``http://localhost:8000/``, navigate to the "Web App" tab on the left.
 2. Input the desired tag and start and end date for the posts you would like to see.
 3. Go to ``http://localhost:8000/admin`` and navigate to the "Images" table if you would like to see the database table.

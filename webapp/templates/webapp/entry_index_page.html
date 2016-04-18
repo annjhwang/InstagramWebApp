@@ -1,12 +1,50 @@
-{% extends "personal/header.html" %}
 
-<h2>Posts:</h2>
 
-{% includes page_template %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-{% block js %}
-    
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
-    <script>$.endlessPaginate();</script>
-{% endblock %}
+<div class="container">
+		<table class="table table-striped">
+			<thead>
+		      <tr>
+		        <th><h4>Username</h4></th>
+		        <th><h4>Post</h1></t4>
+		        <th><h4>Date Posted</h4></th>
+		        <th><h4>Native Link</h4></th>
+		      </tr>
+		    </thead>
+		    {% if images|length < 0 %}
+			  	<h4>No images were found.</h4>
+
+			{% else %}
+			    {% load el_pagination_tags %}
+
+				{% paginate images %}
+				{% for img in images %}
+				<tr>
+					<td><h6>{{ img.User }}</h6></td>
+						{%if img.image_datatype == 'image'%}
+					    	<td><img width="250" height="200" src="{{ img.image_url }}" alt="some_text"></td>
+						{% else %}
+					    	<td><video width="250" height="200" controls>
+					    	<source src="{{ img.image_url }}" alt="some_text"></video>
+					    	</td>
+						{% endif %}
+					<td><h6>{{img.post_date}}</h6></td>
+					<td><h6><a href="{{img.image_link}}">Visit native link for {{img.User}}'s post.</a></h6></td>
+				</tr>
+				{% endfor %}
+				{% show_pages %}
+			</table>
+			</div>
+		  {% endif %}
+
+</body>
+</html>

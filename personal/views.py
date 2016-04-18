@@ -7,3 +7,6 @@ def index(request):
 
 def contact(request):
     return render(request, 'personal/basic.html',{'content':['If you would like to contact me, please email me.','annhwang@college.harvard.edu']})
+
+def webapp(request):
+    return render(request, 'webapp/search_form.html')

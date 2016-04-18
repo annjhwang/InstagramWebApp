@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'personal',
     'blog',
     'webapp',
-    'endless_pagination',
+    'el_pagination',
     'django_instagram',
     'django.contrib.admin',
     'django.contrib.auth',

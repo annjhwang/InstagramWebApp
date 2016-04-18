@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # InstagramWebApp
 =======
 # Web Application - Instagram
@@ -31,4 +31,3 @@ Finally, open the website in browser at:
 2. Input the desired tag and start and end date for the posts you would like to see.
 3. Go to ``http://localhost:8000/admin`` and navigate to the "Images" table if you would like to see the database table.
 
->>>>>>> 435b3406456c5e4b7ffc024026888379c0c3967f
